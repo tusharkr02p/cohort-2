@@ -33,9 +33,8 @@
     </script>
 </head>
 <body>
-        <input id="Firstnumber" type="text" placeholder="First Number"></input><br></br>
-        <input id="Secondno" type="text" placeholder="Second Number"></input><br></br>
-        <button onclick="populateDiv()">Calculate Sum</button> <br></br>
+        <input oninput="debouncingPopulateDiv()" id="Firstnumber" type="text" placeholder="First Number"></input><br></br>
+        <input oninput="debouncingPopulateDiv()" id="Secondno" type="text" placeholder="Second Number"></input><br></br>
         <div id="FinalDiv"></div>
 
 </body>
