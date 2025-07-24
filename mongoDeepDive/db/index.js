@@ -1,5 +1,14 @@
+require('dotenv').config();
 const mongoose = require ("mangoose");
-mongoose.connect('mongodb+srv://tushar02p:TJJYdYv8wlbB0rIJ@cluster0.at122yl.mongodb.net/course_app');
+const mongoURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.error('MongoDB connection error:', err));
+
 
 const AdminSchema = new mongoose.Schema({
     username: String,
